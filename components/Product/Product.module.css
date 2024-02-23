@@ -1,0 +1,52 @@
+.page {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidePage {
+    justify-content: flex-start;
+    padding: 10px;
+    top: 0;
+}
+
+.sidePage ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidePage li {
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: left;
+}
+
+.books {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 200px;
+    margin: 10px;
+    background-color: var(--product-background);
+    padding: 40px;
+    align-items: center;
+    text-align: left;
+    height: 375px;
+    overflow: hidden;
+}
+
+.books p {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 1px;
+}
+
+.books p.title {
+    margin-top: 1px;
+}

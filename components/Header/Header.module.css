@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-weight: bolder;
+  }
+  
+  .bcit {
+    flex: 0 0 auto;
+  }
+  
+  .list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  .list li {
+    margin: 30px;
+    cursor: pointer;
+  }
+  
+  .cart {
+    flex: 0 0 auto;
+  }
