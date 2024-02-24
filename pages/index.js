@@ -5,14 +5,16 @@ import { useState } from "react";
 import Footer from "@/components/Footer";
 import Product from "@/components/Product";
 import Header from "@/components/Header";
+import Button from "@/components/Button";
 
 
 export default function Home() {
 
-  const [data, useData] = useState([]);
+  const [data, setData] = useState([]);
 
   const allBooks = () => {
     setData(bookStore);
+    console.log(bookStore);
   }
 
   const book = (course) => {
@@ -20,8 +22,10 @@ export default function Home() {
     setData(filter);
    }
 
-   console.log('filter', data);
-
+   const sortBookTitle = () => {
+    data.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+    console.log(data);
+   }
   return (
     <>
       <Head>
@@ -36,12 +40,16 @@ export default function Home() {
         <div className={styles.sidePage}>
                   <ul>
                       <li onClick={allBooks}>All</li>
-                      <li onClick={() => bookStore('MKTG')}>Communications</li>
-                      <li onClick={() => bookStore('COMM')}>Computer Science</li>
-                      <li onClick={() => bookStore('COMP')}> Marketing</li>
-                      <li onClick={() => bookStore('MATH')}>Math</li>
+                      <li onClick={() => book('MKTG')}>Marketing</li>
+                      <li onClick={() => book('COMM')}>Communications</li>
+                      <li onClick={() => book('COMP')}>Computer Science</li>
+                      <li onClick={() => book('MATH')}>Math</li>
                   </ul>
         </div>
+
+        <Button onClick={() => sortBookTitle()} sort={"Book Title"}/> 
+        <Button sort={"↑"}/> 
+        <Button sort={"↓"}/> 
 
         {
             data.map((book) => (
