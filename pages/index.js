@@ -23,9 +23,25 @@ export default function Home() {
    }
 
    const sortBookTitle = () => {
+    // It sorts through the array, when it goes through a and b (a=book 1, b=book2). It sorts through anything labeled "title" //
     data.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+    // square brackets to see it as a new array, and the  "..." is spreading which is putting that data into the new array//
+    setData([...data]);
     console.log(data);
    }
+   
+   const sortBookEditionAscending = () => {
+    data.sort((a, b) => parseInt(a.edition) - parseInt(b.edition))
+    setData([...data]);
+    console.log(data);
+   }
+
+   const sortBookEditionDescending = () => {
+    data.sort((a, b) => parseInt(b.edition) - parseInt(a.edition))
+    setData([...data]);
+    console.log(data);
+   }
+
   return (
     <>
       <Head>
@@ -47,10 +63,14 @@ export default function Home() {
                   </ul>
         </div>
 
+        {/* Conditional rendering */}
+        {data.length > 0 && 
+        <>
         <Button onClick={() => sortBookTitle()} sort={"Book Title"}/> 
-        <Button sort={"↑"}/> 
-        <Button sort={"↓"}/> 
-
+        <Button onClick={() => sortBookEditionAscending()} sort={"↑"}/> 
+        <Button onClick={() => sortBookEditionDescending()} sort={"↓"}/> 
+        </>}
+        
         {
             data.map((book) => (
               <Product key={book.title} book={book}/>
