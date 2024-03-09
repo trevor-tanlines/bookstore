@@ -14,7 +14,6 @@
   position: fixed;
   top: 20rem;
   left: 0;
-
 }
 
 .sidePage ul {
@@ -23,16 +22,156 @@
   margin: 0;
 }
 
-.sidePage li {
+.sidePage li:hover {
 cursor: pointer;
 margin-bottom: 10px;
 position: left;
+font-weight: bolder;
+text-decoration: underline;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end; 
+  margin-bottom: 25px; 
+  margin-left: auto;
+  
+}
+
+.bookSort {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 20px; 
+}
+
+.product {
+  flex: auto;
+  margin: 20px; 
+  box-sizing: border-box; }
+  
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  padding: 20px 0;
 }
 
 @media (min-width: 701px) and (max-width: 1120px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 20vh;
+  }
 
+  .sidePage {
+    justify-content: flex-start;
+    padding: 20px;
+    top: 0;
+    position: fixed;
+    top: 20rem;
+    left: 0;
+    font-size: 14px;
+  }
+  
+  .sidePage ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+  }
+  
+  .sidePage li:hover {
+  cursor: pointer;
+  margin-bottom: 10px;
+  position: left;
+  font-weight: bolder;
+  text-decoration: underline;
+  font-size: 14px
+  }
+
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end; 
+    margin-bottom: 25px; 
+    margin-left: auto;
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+  .bookSort {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .product {
+    flex: auto;
+    margin: 20px; 
+    box-sizing: border-box; 
+  }
 }
 
 @media (max-width: 700px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6rem;
+    min-height: 20vh;
+    background-color: red;
+  }
 
+  .buttonContainer {
+    display: flex;
+    justify-content: first baseline;
+    margin-top: 50px;
+    margin-bottom: 25px; 
+    margin-left: 5px;
+    padding-left: 20px;
+    padding-right: 10px;
+  }
+
+  .Header {
+    flex-wrap: wrap;
+  }
+
+  .bookSort {
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+
+  .sidePage {
+      justify-content: flex-start;
+      padding: 20px;
+      top: 0;
+      position: absolute;
+      margin-top: 260px;
+      margin-left: 150px;
+      left: 0;
+      font-size: 14px;
+  }
+
+  .sidePage li:hover {
+    cursor: pointer;
+    margin-bottom: 10px;
+    position: left;
+    font-weight: bolder;
+    text-decoration: underline;
+    font-size: 14px
+    }
+
+  
 }

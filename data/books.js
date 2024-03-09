@@ -4,7 +4,7 @@ export const bookStore = [
             title: "Marketing: The Core",
             authors: ["Roger Kerin, Steven Hartley, Arsenio Bonifacio, Donna Dumont"],
             edition: 6,
-            image: "/books/marketing-the-core.jpg"
+            image: "/books/marketing-the-core.jpg" 
         },
         {
             course: "COMM 1120",

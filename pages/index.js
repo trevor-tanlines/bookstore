@@ -46,7 +46,7 @@ export default function Home() {
     <>
       <Head>
         <title>BCIT Book Store</title>
-        <meta name="description" content="All online pick-up orders are available at the Burnaby Campus Bookstore (SE2). PLease allow 2-3 business days for order processing." />
+        <meta name="description" content="All online pick-up orders are available at the Burnaby Campus Bookstore (SE2). Please allow 2-3 business days for order processing." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -63,6 +63,7 @@ export default function Home() {
                   </ul>
         </div>
 
+        <div className={styles.buttonContainer}>
         {/* Conditional rendering */}
         {data.length > 0 && 
         <>
@@ -70,15 +71,18 @@ export default function Home() {
         <Button onClick={() => sortBookEditionAscending()} sort={"↑"}/> 
         <Button onClick={() => sortBookEditionDescending()} sort={"↓"}/> 
         </>}
+        </div>
         
+        <div className={styles.bookSort}>
         {
             data.map((book) => (
               <Product key={book.title} book={book}/>
             ))
         }
+        </div>
 
       </main>
-      <Footer/>
+      <Footer className={styles.footer}/>
     </>
   );
 }

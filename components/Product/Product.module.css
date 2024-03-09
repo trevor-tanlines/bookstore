@@ -1,52 +1,41 @@
-.page {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.container {
+.book {
+    width: 250; /* Each book occupies approximately one-third of the container width with some margin */
+    margin: 10px; /* Add margin around each book */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
     display: flex;
-    flex-direction: row;
 }
 
-.sidePage {
-    justify-content: flex-start;
-    padding: 10px;
-    top: 0;
-}
-
-.sidePage ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.sidePage li {
-    cursor: pointer;
-    margin-bottom: 10px;
-    position: left;
-}
-
-.books {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    width: 200px;
-    margin: 10px;
+.border {
+    width: 220px;
     background-color: var(--product-background);
-    padding: 40px;
-    align-items: center;
-    text-align: left;
-    height: 375px;
+    padding: 20px;
+    min-height: 400px;
     overflow: hidden;
+    text-align: center;
+    word-wrap: break-word;
+    transition: border-color 0.3s ease;
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
 }
 
-.books p {
+.border p {
+    margin-top: 10px;
     max-width: 100%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    margin-top: 1px;
 }
 
-.books p.title {
-    margin-top: 1px;
+.border:hover {
+    border-color: var(--highlight)
+}
+
+.textContainer {
+    margin-top: 10px;
+    max-width: 100%;
+    border: 8px solid transparent;
+}
+
+.textContainer:hover {
+    border-color: var(--highlight);
 }
